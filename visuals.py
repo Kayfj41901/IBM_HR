@@ -39,7 +39,7 @@ left_train = train[train['Attrition'] == 1]
 stayed_train = train[train['Attrition'] == 0]
 
 def univariate():
-    train.hist(bins = 30, figsize = (20, 20), color= 'r')
+    train.hist(bins = 30, figsize = (20, 20), color= 'orange')
 
 def Environment_Satisfaction_Countplot():
     plt.figure(figsize = [8, 4])
@@ -250,3 +250,12 @@ def level_one_HumanResources():
 def Stock_Option_countplot():
     plt.figure(figsize = [8, 4])
     sns.countplot(x ='StockOptionLevel', hue ='Attrition', data = df)
+
+def Current_Attrition_Rate():
+    labels = 'Quit', 'Stayed'
+    data = [17, 83]
+    colors = sns.color_palette('pastel')
+    plt.pie(data, labels=labels, colors = colors)
+    plt.show()
+
+  

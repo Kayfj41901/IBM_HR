@@ -2,7 +2,7 @@ from imports import *
 
 df = pd.read_csv('WA_Fn-UseC_-HR-Employee-Attrition.csv')
 
-def prepare_HR():
+def prepare_HR(df):
     df['Attrition'] = df['Attrition'].apply(lambda x:1 if x == 'Yes' else 0)
     df['OverTime'] = df['OverTime'].apply(lambda x:1 if x == 'Yes' else 0)
     df.drop(['EmployeeCount', "StandardHours", 'Over18', 'EmployeeNumber'], axis=1, inplace=True)
